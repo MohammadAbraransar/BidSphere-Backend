@@ -1,6 +1,5 @@
 package com.auction.bidding.controller;
 
-import com.auction.bidding.model.Bid;
 import com.auction.bidding.model.User;
 import com.auction.bidding.repository.AuctionItemRepository;
 import com.auction.bidding.repository.BidRepository;

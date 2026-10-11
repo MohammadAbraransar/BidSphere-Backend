@@ -3,10 +3,6 @@ package com.auction.bidding.controller;
 import com.auction.bidding.dto.PaymentRequest;
 import com.auction.bidding.dto.PaymentResponse;
 import com.auction.bidding.service.PaymentService;
-import com.auction.bidding.model.User;
-import com.auction.bidding.model.Transaction;
-import com.auction.bidding.repository.UserRepository;
-import com.auction.bidding.repository.TransactionRepository;
 import com.stripe.exception.StripeException;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -18,8 +14,6 @@ import org.springframework.beans.factory.annotation.Value;
 
 import java.security.Principal;
 import java.util.Map;
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
 
 @RestController
 @RequestMapping("/api/payments")
@@ -27,8 +21,6 @@ import java.time.LocalDateTime;
 public class PaymentController {
 
     private final PaymentService paymentService;
-    private final UserRepository userRepository;
-    private final TransactionRepository transactionRepository;
 
     @Value("${stripe.webhook.secret:whsec_test}")
     private String endpointSecret;

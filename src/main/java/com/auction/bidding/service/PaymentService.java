@@ -4,9 +4,6 @@ import com.auction.bidding.dto.PaymentRequest;
 import com.auction.bidding.dto.PaymentResponse;
 import com.auction.bidding.model.User;
 import com.auction.bidding.repository.UserRepository;
-import com.auction.bidding.repository.TransactionRepository;
-import com.auction.bidding.model.Transaction;
-import java.time.LocalDateTime;
 import com.stripe.Stripe;
 import com.stripe.exception.StripeException;
 import com.stripe.model.PaymentIntent;
@@ -27,7 +24,6 @@ public class PaymentService {
     private String stripeApiKey;
 
     private final UserRepository userRepository;
-    private final TransactionRepository transactionRepository;
 
     @PostConstruct
     public void init() {
